@@ -10,3 +10,7 @@
 
   <button (click) = "nuovaMail(destinatario, oggetto, corpo)">Invia</button>
 </form>
+
+<div *ngFor="let mail of vettore">
+  <app-sent-mail [mailozza] = 'mail'></app-sent-mail>
+</div>
