@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Email } from './mail.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mail-sandro';
+  vettore: Email[] = [];
+  nuovaMail(destinatario: HTMLInputElement, oggetto:HTMLInputElement, corpo: HTMLInputElement): boolean {
+    this.vettore.push(new Email(destinatario.value, oggetto.value, corpo.value))
+    console.log(this.vettore)
+    return false
+  }
 }
